@@ -2,7 +2,7 @@ import profilepic from '../../../assets/about/profilepic.jpg';
 
 const ProfPic = () => {
     return (
-        <div className="w-full md:w-1/3 mb-6 md:mb-0">
+        <div className="m-4">
             <img
               src={profilepic}
               alt="Profile"

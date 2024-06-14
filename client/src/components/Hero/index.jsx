@@ -1,5 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import Typewriter from 'typewriter-effect'
+import resume from '../../assets/about/Wesley Abreu Resume.pdf'
+import { Link } from 'react-scroll';
+
 
 // Styled component for the hero section
 const HeroSection = styled.section`
@@ -43,7 +47,7 @@ const StarsContainer = styled.div`
 // Styled component for the title
 const Title = styled.div`
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0;
   right: 0;
   color: #FFF;
@@ -60,6 +64,19 @@ const Title = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+`;
+
+const Button = styled.a`
+  /* Button styles */
+  display: inline-block;
+  background-color: #38495a;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
 `;
 
 const Hero = () => {
@@ -87,12 +104,25 @@ const Hero = () => {
   ));
 
   return (
-    <HeroSection>
+    <HeroSection id="hero">
       {stars}
       <Title>
-        <span>HI, I AM WESLEY</span>
-        <br />
+        <span><Typewriter
+          options={{
+            strings: ['HELLO I AM WESLEY'],
+            autoStart: true,
+            loop: true,
+          }}
+        /></span>
         <span>A FULL-STACK DEVELOPER</span>
+        <br />
+        <Button href={resume} download="WesleyResume.pdf">
+          DOWNLOAD CV
+        </Button>
+        <br />
+        <Link to="about" smooth={true} duration={500}>
+          <span className='cursor-pointer'>↓</span>
+        </Link>
       </Title>
     </HeroSection>
   );

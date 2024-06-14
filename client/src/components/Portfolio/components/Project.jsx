@@ -1,45 +1,59 @@
-// src/components/Project.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
-function Project({ project }) {
-  const [showDetails, setShowDetails] = useState(false);
+const RevealOnScroll = ({ children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const onWindScroll = () => {
+      const element = ref.current;
+      if (element) {
+        const { top } = element.getBoundingClientRect();
+        const isVisible = top < window.innerHeight;
+        setIsVisible(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", onWindScroll);
+    return () => {
+      window.removeEventListener("scroll", onWindScroll);
+    };
+  }, []);
+
+  const classes = `transition-opacity duration-1000
+		${isVisible ? "opacity-100" : "opacity-0"
+    }`;
 
   return (
-    <div 
-      className="relative bg-white shadow-md rounded-md overflow-hidden"
-      onMouseEnter={() => setShowDetails(true)}
-      onMouseLeave={() => setShowDetails(false)}
-    >
-      <img src={project.image} alt={project.title} className="w-full h-50 object-cover" />
-      <div className="p-4">
-        <h3 className="text-xl font-bold">{project.title}</h3>
-      </div>
-      {showDetails && (
-        <div className="absolute inset-0 bg-black bg-opacity-75 text-white flex flex-col items-center justify-center p-4">
-          <p className="mb-12 text-center">{project.subText}</p>
-          <div className="space-x-4">
-            <a 
-              href={project.demoURL} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-yellow-500 text-gray-900 px-4 py-2 rounded-md"
-            >
-              Live Demo
-            </a>
-            <a 
-              href={project.repoURL} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-yellow-500 text-gray-900 px-4 py-2 rounded-md"
-            >
-              View Code
-            </a>
+    <div ref={ref} className={classes}>
+      {children}
+    </div>
+  );
+};
+
+function Project({ project }) {
+
+  return (
+    <RevealOnScroll>
+      <div className={`flex ${project.class} bg-white rounded`}>
+        <div class="lg:w-1/2">
+          <img src={project.image} alt={project.title} className="object-cover object-center lg:scale-110 h-90 lg:h-full rounded-b-none border lg:rounded-lg" />
+        </div>
+        <div class="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg">
+          <h2 class="text-3xl text-gray-800 font-bold">
+            {project.title}
+          </h2>
+          <p class="mt-4 text-gray-600">
+            {project.subText}
+          </p>
+          <div class="mt-8 flex justify-around">
+            <a href={project.demoURL} class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded hover:text-indigo-600 duration-500">Explore Page</a>
+            <a href={project.repoURL} class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded hover:text-indigo-600 duration-500"> See Repo</a>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    </RevealOnScroll>
   );
 }
 
 export default Project;
-
