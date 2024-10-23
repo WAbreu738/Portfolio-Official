@@ -22,7 +22,7 @@ const projectData = [
     title: "Wine & Dine",
     class: "flex-col lg:flex-row-reverse mb-28",
     subText: "This project is aimed at providing users with a platform to discover new recipe ideas with wine pairing suggestions. The application works through offering generated recommendations and recipes based off of user input data containing ingredients and an option to select a wine or cocktail.",
-    demoURL: "https://wabreu738.github.io/recipe-app-group-project/",
+    demoURL: "https://wabreu738.github.io/Wine_and_Dine/",
     repoURL: "https://github.com/WAbreu738/recipe-app-group-project",
     image: wineanddine
   },
