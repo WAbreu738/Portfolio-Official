@@ -1,0 +1,84 @@
+.scroll-container {
+  height: 20vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-primary,
+.carousel-secondary {
+  width: 200%; /* Ensure enough width for all items */
+  position: absolute;
+  display: flex;
+  align-items: center;
+  animation: scroll-horizontal 40s linear infinite;
+}
+
+.carousel-primary {
+  left: 0;
+}
+
+.carousel-secondary {
+  left: 100%; /* Start after the primary carousel */
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  margin-right: 0.9%; /* Use percentage for responsive margin */
+}
+
+.technology-image {
+  width: 100px; /* Adjust image size */
+  height: 100px; /* Maintain aspect ratio */
+  padding: 10px; /* Adjust spacing around images */
+  border-radius: 8px; /* Rounded corners */
+  background: #ffffff; /* Optional background color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional box shadow */
+}
+
+/* Specific padding for Node, JS, and CSS logos */
+.css-logo {
+  padding: 10px 20px;
+}
+
+.js-logo {
+  padding: 10px 20px;
+}
+
+.node-logo {
+  padding: 22px 10px;
+}
+
+.sql-logo {
+  padding: 28px 10px;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 768px) {
+  .technology-image {
+    width: 80px; /* Adjust image size for smaller screens */
+    height: 80px; /* Maintain aspect ratio */
+  }
+  .carousel-primary,
+  .carousel-secondary {
+    animation: scroll-horizontal 40s linear infinite; /* Slower animation for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .technology-image {
+    width: 80px; /* Adjust image size for smaller screens */
+    height: 80px; /* Maintain aspect ratio */
+  }
+  .carousel-primary {
+    animation: scroll-horizontal 40s linear infinite; /* Slower animation for smaller screens */
+  }
+}

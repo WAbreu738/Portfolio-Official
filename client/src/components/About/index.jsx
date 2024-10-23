@@ -1,21 +1,19 @@
 import React from 'react';
-import AboutText from './components/AboutText'
-import Technologies from './components/Technologies'
+import AboutText from './components/AboutText';
+
 import ProfPic from './components/ProfilePic';
 
 const About = () => {
   return (
-      <section className="container mx-auto py-10">
+    <section id="about" className="container mx-auto py-10">
+      <div className="bg-white rounded-lg shadow-lg p-6 md:p-10 m-4 md:m-10">
         <div className="flex flex-col md:flex-row items-center">
           <ProfPic />
           <AboutText />
         </div>
-
-        <div className="mt-10">
-          <h3 className="text-2xl font-bold mb-4">Technologies I Use</h3>
-            <Technologies />
-        </div>
-      </section>
+       
+      </div>
+    </section>
   );
 };
 

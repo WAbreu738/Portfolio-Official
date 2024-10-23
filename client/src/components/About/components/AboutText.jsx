@@ -1,20 +1,18 @@
-
 const AboutText = () => {
-    return (
-        <div className="w-full md:w-2/3 md:pl-10">
-            <h2 className="text-3xl font-bold mb-4">About Me</h2>
-            <p className="text-lg text-ternary-dark dark:text-ternary-light mb-4">
-              I'm Wesley Abreu, a dedicated full-stack web developer enthusiastic about crafting visually appealing and highly functional websites. My journey in web development has equipped me with a diverse skill set and a strong drive to deliver exceptional user experiences.
-            </p>
-            <p className="text-lg text-ternary-dark dark:text-ternary-light mb-4">
-              Proficient in front-end technologies such as React, HTML, CSS, and JavaScript, as well as back-end technologies including Node.js, Express, and databases like MongoDB, I strive to stay abreast of emerging technologies and industry trends.
-            </p>
-            <p className="text-lg text-ternary-dark dark:text-ternary-light">
-              My passion for problem-solving and continuous learning fuels my ambition to excel as a versatile full-stack developer, eager to make meaningful contributions to innovative projects. Currently, I am actively seeking opportunities to further leverage my expertise and contribute to impactful web development endeavors.
-            </p>
-          </div>
-    );
-  };
-  
-  export default AboutText;
-  
+  return (
+    <div className="w-full md:w-2/3 md:pl-10">
+      <h2 className="text-3xl font-bold mb-4">A Little About Me</h2>
+      <p className="text-lg text-ternary-dark dark:text-ternary-light mb-4">
+        I'm Wesley Abreu, a dedicated full-stack web developer with a passion for creating visually appealing and highly functional websites. My journey in web development has not only equipped me with a diverse skill set but also instilled in me a strong drive to deliver exceptional user experiences.
+      </p>
+      <p className="text-lg text-ternary-dark dark:text-ternary-light mb-4">
+        I am enthusiastic about programming and thrive on problem-solving and continuous learning. I enjoy exploring new tools and techniques to enhance my development capabilities and keep my skills sharp.
+      </p>
+      <p className="text-lg text-ternary-dark dark:text-ternary-light">
+        Currently, I am actively seeking opportunities to leverage my expertise in real-world projects, contributing to the success of innovative and forward-thinking teams. I am excited to bring my skills and passion to impactful web development endeavors.
+      </p>
+    </div>
+  );
+};
+
+export default AboutText;

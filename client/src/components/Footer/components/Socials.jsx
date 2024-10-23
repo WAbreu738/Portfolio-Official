@@ -7,12 +7,12 @@ const socialLinks = [
     {
         id: 1,
         icon: <FaGithub />,
-        url: 'https://github.com/yourgithub',
+        url: 'https://github.com/WAbreu738',
     },
     {
         id: 2,
         icon: <FaLinkedin />,
-        url: 'https://www.linkedin.com/in/yourlinkedin',
+        url: 'https://www.linkedin.com/in/wes-abreu/',
     },
 ];
 
@@ -20,7 +20,7 @@ const socialLinks = [
 
 const Socials = () => {
     return (
-        <div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28">
+        <div className="font-general-regular text-white flex flex-col justify-center items-center mb-8 sm:mb-20">
             <p className="text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">
                 Follow me
             </p>
